@@ -5,7 +5,7 @@ spring:
         input:
           destination: converter.sink
           binder: local_solace
-          group: group
+          group: v1
       binders:
         local_solace:
           type: solace

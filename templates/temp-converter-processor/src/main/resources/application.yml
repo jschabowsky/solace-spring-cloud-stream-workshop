@@ -5,7 +5,7 @@ spring:
       bindings:
         input:
           destination: [PROCESSOR_QUEUE_NAME]
-          group: group
+          group: v1
         output_sensor1:
           destination: [PROCESSOR_SENSOR1_TOPIC]
         output_sensor2:

@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: [SOURCE_TOPIC]
+          binder: solace
+logging:
+  level:
+    com.solacesystems.jcsmp: INFO
+server:
+  port: 0

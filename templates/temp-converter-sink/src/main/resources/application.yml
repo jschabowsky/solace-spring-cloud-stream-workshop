@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: converter.sink
+          binder: local_solace
+          group: group
+      binders:
+        local_solace:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: [IP_ADDRESS]
+                msgVpn: [VPN_NAME]
+                clientUsername: [CLIENT_USERNAME]
+                clientPassword: [CLIENT_PASSWORD]
+      solace:
+        bindings:
+          input:
+            consumer:
+              queueAdditionalSubscriptions: [SINK_SUBSCRIPTIONS]
+logging:
+  level:
+    com.solacesystems.jcsmp: INFO
+server:
+  port: 0

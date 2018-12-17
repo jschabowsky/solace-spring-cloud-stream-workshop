@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    stream:
+      default-binder: local_solace
+      bindings:
+        input:
+          destination: converter.processor
+          group: group
+        output_sensor1:
+          destination: converter/processor/sensor1
+        output_sensor2:
+          destination: converter/processor/sensor2
+      binders:
+        local_solace:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 192.168.65.3
+                msgVpn: default
+                clientUsername: default
+                clientPassword: default
+                apiProperties:
+                  generate_sequence_numbers: true
+                  generate_sender_id: true
+                  generate_send_timestamps: true
+      solace:
+        bindings:
+          input:
+            consumer:
+              queueAdditionalSubscriptions: converter/source
+              autoBindDmq: true
+logging:
+  level:
+    com.solacesystems.jcsmp: INFO
+server:
+  port: 0

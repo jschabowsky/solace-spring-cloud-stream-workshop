@@ -20,7 +20,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 public class TempConverterSink {
     private static final Logger _log = LoggerFactory.getLogger(TempConverterSink.class);
 
-    // TODO: Add log sink stream listener here
+    // TODO: Add log sink stream listener callback
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TempConverterSink.class, args);

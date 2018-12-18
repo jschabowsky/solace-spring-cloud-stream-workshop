@@ -16,11 +16,11 @@ import org.springframework.cloud.stream.messaging.Sink;
  * @author Solace Corp
  */
 @SpringBootApplication
-@EnableBinding(Sink.class)
+// TODO: Specify annotation to use a Spring Cloud Stream binding
 public class TempConverterSink {
     private static final Logger _log = LoggerFactory.getLogger(TempConverterSink.class);
 
-    // Add log sink stream listener here
+    // TODO: Add log sink stream listener here
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TempConverterSink.class, args);

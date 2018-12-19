@@ -49,8 +49,9 @@ public class TempConverterProcessor {
 	
     // TODO: Add a stream listener which routes content in imperial units
     public void convertFtoC(SensorReading reading) {
-    	// TODO: Calculate the conversion from F to C degrees
-    	// TODO: Validate the result, then publish to the sensor2 output
+    	// TODO: 
+    	// Calculate the conversion from F to C degrees
+    	// Validate the result, then publish to the sensor2 output
 	}    
 
 	public static void main(String[] args) {

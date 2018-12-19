@@ -40,7 +40,7 @@ public class TempConverterProcessor {
     	// TODO: If the base unit header is missing or invalid, throw an exception
     }
 
-    // TODO: Add a stream listener which routes content in metric units 
+    @StreamListener(target = ProcessorBinding.INPUT, condition = "headers['BASE_UNIT']=='CELSIUS'") 
     public void passThruMetric(SensorReading reading) {
 		_log.info("passThruMetric: " + reading);
 

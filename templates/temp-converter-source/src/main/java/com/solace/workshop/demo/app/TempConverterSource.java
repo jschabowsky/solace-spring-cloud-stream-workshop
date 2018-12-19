@@ -37,9 +37,9 @@ public class TempConverterSource {
 		SpringApplication.run(TempConverterSource.class, args);
 	}
     
-    // Add @InboundChannelAdapter here
+    // TODO: Add @InboundChannelAdapter here
     public Message<?> emitSensorReading() {
-        // Add code to create a simulated sensor reading, alternating between C and F degrees
+        // TODO: Add code to create a simulated sensor reading, alternating between C and F degrees
 
         return MessageBuilder
         		.withPayload(reading)

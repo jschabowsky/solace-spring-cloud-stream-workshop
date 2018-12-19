@@ -10,7 +10,7 @@ public interface ProcessorBinding {
     String OUTPUT_SENSOR1 = "output_sensor1";
     String OUTPUT_SENSOR2 = "output_sensor2";
 
-    // Add one input and two outputs corresponding to the above
+    // TODO: Add one input and two outputs corresponding to the above
     
 }
 

@@ -1,8 +1,5 @@
 package com.solace.workshop.demo.app;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,8 +25,6 @@ import com.solace.workshop.demo.datamodel.SensorReading;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TempConverterProcessorTests {
-    private static final Logger _log = LoggerFactory.getLogger(TempConverterProcessorTests.class);
-
     @Autowired
     private ProcessorBinding processor;
 
@@ -78,8 +73,7 @@ public class TempConverterProcessorTests {
         processor.input().send(msgInput);
         
         Message<?> msgOutput = (Message<?>) collector.forChannel(processor.outputSensor1()).poll(10, TimeUnit.SECONDS);
-        String payload = (msgOutput != null) ? (String)msgOutput.getPayload() : null;        
-        _log.info("Sensor 1 payload: " + payload);
+        String payload = (msgOutput != null) ? (String)msgOutput.getPayload() : null;
         
         assertNotNull(payload);
         assertThat(payload, allOf(
@@ -102,7 +96,6 @@ public class TempConverterProcessorTests {
         
         Message<?> msgOutput = (Message<?>) collector.forChannel(processor.outputSensor2()).poll();
         String payload = (msgOutput != null) ? (String)msgOutput.getPayload() : null;
-        _log.info("Sensor 2 payload: {}", payload);
 
         assertNotNull(payload);        
         assertThat(payload, allOf(

@@ -1,8 +1,5 @@
 package com.solace.workshop.demo.app;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,8 +21,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TempConverterSourceTests {
-    private static final Logger _log = LoggerFactory.getLogger(TempConverterSourceTests.class);
-
     @Autowired
     private Source source;
 
@@ -36,7 +31,6 @@ public class TempConverterSourceTests {
     public void testSource() throws InterruptedException {
         Message<?> msg = (Message<?>) collector.forChannel(source.output()).poll(10, TimeUnit.SECONDS);
         Object payload = (msg != null) ? msg.getPayload() : null;        
-        _log.info("Received payload: " + payload);
 
         assertNotNull(payload);
         assertThat((String)payload, allOf(

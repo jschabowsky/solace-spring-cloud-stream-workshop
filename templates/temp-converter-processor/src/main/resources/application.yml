@@ -6,9 +6,9 @@ spring:
         input:
           destination: [PROCESSOR_QUEUE_NAME]
           group: v1
-        output_sensor1:
+        outputSensor1:
           destination: [PROCESSOR_SENSOR1_TOPIC]
-        output_sensor2:
+        outputSensor2:
           destination: [PROCESSOR_SENSOR2_TOPIC]
       binders:
         local_solace:

@@ -7,8 +7,6 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface ProcessorBinding {
     String INPUT = "input";
-    String OUTPUT_SENSOR1 = "output_sensor1";
-    String OUTPUT_SENSOR2 = "output_sensor2";
 
     @Input
     SubscribableChannel input();

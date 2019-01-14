@@ -4,6 +4,6 @@ applications:
   memory: 1024M
   path: target/temp-converter-source-0.0.1.BUILD-SNAPSHOT.jar
   buildpacks:
-    - java_buildpack
+    - java_buildpack_offline
   services:
   - solace-pubsub-service

@@ -3,7 +3,5 @@ applications:
 - name: temp-converter-processor-[STUDENT_ID]
   memory: 1024M
   path: target/temp-converter-processor-0.0.1.BUILD-SNAPSHOT.jar
-  buildpacks:
-    - java_buildpack_offline
   services:
   - solace-pubsub-service

@@ -3,7 +3,7 @@ spring:
     stream:
       bindings:
         output:
-          destination: [SOURCE_TOPIC]
+          destination: [STUDENT_ID]/[SOURCE_TOPIC]
           binder: solace
 logging:
   level:

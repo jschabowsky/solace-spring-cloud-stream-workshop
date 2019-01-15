@@ -5,7 +5,7 @@ spring:
         input:
           destination: converter.sink
           binder: local_solace
-          group: v1
+          group: WORKSHOP_USER
       binders:
         local_solace:
           type: solace
@@ -20,7 +20,7 @@ spring:
         bindings:
           input:
             consumer:
-              queueAdditionalSubscriptions: converter/processor/>
+              queueAdditionalSubscriptions: WORKSHOP_USER/converter/processor/>
 logging:
   level:
     com.solacesystems.jcsmp: INFO
